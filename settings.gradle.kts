@@ -8,8 +8,13 @@ dependencyResolutionManagement {
     }
 }
 
-include("api")
-include("paper")
-include("velocity")
-include("universal")
-include("fabric")
+sequenceOf(
+    "api",
+    "paper",
+    "velocity",
+    "fabric",
+    "universal"
+).forEach {
+    include("engine-$it")
+    project(":engine-$it").projectDir = file(it)
+}
