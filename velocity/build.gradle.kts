@@ -1,5 +1,5 @@
 
 
 dependencies {
-    implementation(project(":engine-api"))
+    api(project(":engine-api"))
 }

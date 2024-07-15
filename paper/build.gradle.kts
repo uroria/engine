@@ -3,7 +3,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":engine-api"))
+    api(project(":engine-api"))
 
     compileOnly(libs.paperApi)
     annotationProcessor(libs.paperApi)
