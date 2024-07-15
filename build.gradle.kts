@@ -1,5 +1,6 @@
 import com.github.jengelman.gradle.plugins.shadow.ShadowPlugin
 import net.thebugmc.gradle.sonatypepublisher.PublishingType
+import net.thebugmc.gradle.sonatypepublisher.SonatypeCentralPortalPublisherPlugin
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
@@ -63,6 +64,7 @@ allprojects {
 
 subprojects {
     apply<ShadowPlugin>()
+    apply<SonatypeCentralPortalPublisherPlugin>()
 
     centralPortal {
         username = System.getenv("SONATYPE_USERNAME")

@@ -1,7 +1,6 @@
 
 dependencies {
-    implementation(project(":paper"))
-    implementation(project(":velocity"))
-    implementation(project(":fabric"))
-    implementation(project(":"))
+    implementation(project(":engine-paper"))
+    implementation(project(":engine-velocity"))
+    implementation(project(":engine-fabric"))
 }
