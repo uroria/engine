@@ -106,13 +106,15 @@ subprojects {
             }
         }
     }
+}
 
+allprojects {
     signing {
         isRequired = System.getenv("CI") != null
 
         val privateKey = System.getenv("GPG_PRIVATE_KEY")
-        val passphrase = System.getenv("GPG_PASSPHRASE")
-        useInMemoryPgpKeys(privateKey, passphrase)
+        val keyPassphrase = System.getenv()["GPG_PASSPHRASE"]
+        useInMemoryPgpKeys(privateKey, keyPassphrase)
 
         sign(publishing.publications)
     }
