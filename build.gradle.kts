@@ -100,7 +100,7 @@ allprojects {
                 }
             }
             scm {
-                connection = "scm:git:git://github.com/uroria/core.git"
+                connection = "scm:git:git://github.com/uroria/engine.git"
                 developerConnection = "scm:git:git@github.com:uroria/engine.git"
                 url = "https://github.com/uroria/engine"
                 tag = "HEAD"
