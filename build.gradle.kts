@@ -79,7 +79,7 @@ allprojects {
         name = project.name
 
         pom {
-            name = rootProject.name
+            name = project.name
             url = "https://github.com/uroria/engine"
             description = projectDescription
 
