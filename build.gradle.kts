@@ -11,9 +11,6 @@ plugins {
     alias(libs.plugins.sonatypeCentralPortalPublisher)
 }
 
-group = "com.uroria"
-version = System.getenv("ENGINE_VERSION") ?: "0.0.0"
-
 val projectDescription = "Uroria Engine"
 
 dependencies {
@@ -27,6 +24,9 @@ allprojects {
     apply<ShadowPlugin>()
     apply<SonatypeCentralPortalPublisherPlugin>()
     apply<SigningPlugin>()
+
+    group = "com.uroria"
+    version = System.getenv("ENGINE_VERSION") ?: "0.0.0"
 
     repositories {
         mavenCentral()
@@ -74,7 +74,7 @@ allprojects {
         username = System.getenv("SONATYPE_USERNAME")
         password = System.getenv("SONATYPE_PASSWORD")
 
-        publishingType = PublishingType.AUTOMATIC
+        publishingType = PublishingType.USER_MANAGED
 
         name = project.name
 
