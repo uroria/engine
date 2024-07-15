@@ -16,8 +16,17 @@ version = System.getenv("ENGINE_VERSION") ?: "0.0.0"
 
 val projectDescription = "Uroria Engine"
 
+dependencies {
+    api(project(":engine-paper"))
+    api(project(":engine-velocity"))
+    api(project(":engine-fabric"))
+}
+
 allprojects {
     apply<JavaLibraryPlugin>()
+    apply<ShadowPlugin>()
+    apply<SonatypeCentralPortalPublisherPlugin>()
+    apply<SigningPlugin>()
 
     repositories {
         mavenCentral()
@@ -60,11 +69,6 @@ allprojects {
             }
         }
     }
-}
-
-subprojects {
-    apply<ShadowPlugin>()
-    apply<SonatypeCentralPortalPublisherPlugin>()
 
     centralPortal {
         username = System.getenv("SONATYPE_USERNAME")

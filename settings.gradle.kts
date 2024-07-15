@@ -12,8 +12,7 @@ sequenceOf(
     "api",
     "paper",
     "velocity",
-    "fabric",
-    "universal"
+    "fabric"
 ).forEach {
     include("engine-$it")
     project(":engine-$it").projectDir = file(it)
